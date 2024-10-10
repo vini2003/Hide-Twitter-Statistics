@@ -1,7 +1,7 @@
 $version = "2.5"
 $sourceFolder = "."
 $releaseFolder = "releases"
-$zipFile = "$releaseFolder/hide-youtube-statistics-$version.zip"
+$zipFile = "$releaseFolder/hide-twitter-statistics-$version.zip"
 
 if (-not (Test-Path $releaseFolder)) {
     New-Item -ItemType Directory -Path $releaseFolder | Out-Null

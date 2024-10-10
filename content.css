@@ -1,137 +1,37 @@
-/* [Stream] Hide the 'watching now' from the video description's viewers. */
-#view-count {
-    display: none !important;
-}
-
-/* [Video] Hide the 'views' from the video thumbnail. */
-#metadata > #metadata-line > span:nth-child(3) {
-    display: none !important;
-}
-
-/* [Video] Hide the 'separator' between the video thumbnail's views and upload date. */
-#metadata > #metadata-line > span:nth-child(4)::before {
-    display: none !important;
-}
-
-/* [Video] Hide the video description's views. */
-#info-container > #info > span:nth-child(1) {
-    display: none !important;
-}
-
-/* [Video] Hide the 'separator' between the video description's views and upload date. */
-#info-container > #info > span:nth-child(2) {
-    display: none !important;
-}
-
-/* [Video] Hide the vote counts on all comments. */
-#vote-count-middle {
-    display: none !important;
-}
-
-/* [Video] Hide the channel subscriber count atop the video description. */
-#owner-sub-count {
-    display: none !important;
-}
-
-/* [Video] Hide the channel subscriber count below the video description. */
-#header div#subtitle {
+/* This is used to hide only the numbers on the analytics bar (likes, replies, etc) */
+[role="group"] > div:has(> [data-testid="reply"]) > :last-child > :last-child > :last-child {
     display: none;
 }
 
-/* [Video] Hide the like amount in the like button above the video description. */
-like-button-view-model > toggle-button-view-model > button-view-model > button > .yt-spec-button-shape-next__button-text-content {
-    display: none !important;
+[role="group"] > div:has(> [data-testid="unretweet"]) > :last-child > :last-child > :last-child {
+    display: none;
 }
 
-/* [Shorts] Hide the description view count. */
-view-count-factoid-renderer {
-    display: none !important;
+[role="group"] > div:has(> [data-testid="retweet"]) > :last-child > :last-child > :last-child {
+    display: none;
 }
 
-/* [Shorts] Hide the description like amount. */
-div#factoids > factoid-renderer:nth-child(1) {
-    display: none !important;
+[role="group"] > div:has(> [data-testid="unlike"]) > :last-child > :last-child > :last-child {
+    display: none;
 }
 
-/* [Studio] Hide the subscribers trend. */
-.subscribers-trend {
-    display: none !important;
+[role="group"] > div:has(> [data-testid="like"]) > :last-child > :last-child > :last-child {
+    display: none;
 }
 
-/* [Studio] Hide the comment analytics bar below the 'Latest post' section. */
-ytcd-post-stats-item {
-    display: none !important;
+[role="group"] > div:has(> a[href*="analytics"]) > :last-child > :last-child > :last-child {
+    display: none;
 }
 
-/* [Studio] Hide the typical performance indicator icons. */
-.typical-perf-icon {
-    display: none !important;
+[role="group"] > div:has(> [data-testid="bookmark"]) > :last-child > :last-child > :last-child {
+    display: none;
 }
 
-/* [Studio] Hide the 'Latest comments' section. */
-ytcd-card[test-id="channel-dashboard-comment-card"] {
-    display: none !important;
+/* This is used to hide the views of the tweet */
+article[data-testid="tweet"] > div > div > :last-child > :nth-last-child(2) > div > :first-child > div > :last-child:not([data-testid]) {
+    display: none;
 }
 
-/* [Studio] Hide the 'Recent activity' section. */
-ytcd-card[test-id="channel-dashboard-recent-activity-card"] {
-    display: none !important;
-}
-
-/* [Studio] Hide the views metric in the 'Channel analytics' section. */
-#metrics-table .metric-row:first-child {
-    display: none !important;
-}
-
-/* [Studio] Hide the analytics section below 'Latest video performance'. */
-#analytics-section {
-    display: none !important;
-}
-
-/* [Studio] Hide the 'Go to video analytics' button below 'Latest video performance'. */
-#go-to-video-analytics-button {
-    display: none !important;
-
-    width: 0;
-    height: 0;
-}
-
-/* [Channel] Hide the subscriber and video counts in the inner channel header of the main channel pages. */
-#contentContainer #subscriber-count, #contentContainer #videos-count {
-    display: none !important;
-}
-
-/* [Channel] Remove the space after the channel handle in the main channel pages. */
-#contentContainer #subscriber-count + *, #contentContainer #channel-handle + * {
-    display: none !important;
-}
-
-/* [Channel] Hide the 'views' from the video thumbnail. */
-#metadata > #metadata-line.ytd-grid-video-renderer > span:nth-child(1) {
-    display: none !important;
-}
-
-/* [Channel] Hide the 'separator' between the video thumbnail's views and upload date. */
-#metadata > #metadata-line.ytd-grid-video-renderer > span:nth-child(2)::before {
-    display: none !important;
-}
-
-/* [Shorts] Hide the like amount in the like button */
-ytd-toggle-button-renderer[id="like-button"] .yt-spec-button-shape-with-label__label {
-    display: none !important;
-}
-
-/* [Shorts] Hide the dislike amount in the like button */
-ytd-toggle-button-renderer[id="dislike-button"] .yt-spec-button-shape-with-label__label {
-    display: none !important;
-}
-
-/* [Shorts] Hide the comment amount */
-div[id="comments-button"] .yt-spec-button-shape-with-label__label {
-    display: none !important;
-}
-
-/* [Shorts] Hide the comments amount in side panel */
-yt-formatted-string[id="contextual-info"] {
-    display: none !important;
+article[data-testid="tweet"] > div > div > :last-child > :nth-last-child(2) > div > :first-child > div > :nth-last-child(2):not([data-testid]) {
+    display: none;
 }

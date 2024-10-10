@@ -1,18 +1,27 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Hide YouTube Statistics</title>
+    <title>Hide Twitter Statistics</title>
     <link rel="stylesheet" type="text/css" href="popup.css">
 </head>
 <body>
-<h2>Hide YouTube Statistics</h2>
+<h2>Hide Twitter Statistics</h2>
 <hr>
 <div class="container">
-    <label for="toggleComments">Hide Comments</label>
-    <label class="switch">
-        <input type="checkbox" id="toggleComments" name="toggleComments">
-        <span class="slider round"></span>
-    </label>
+    <div>
+        <label for="toggleReplies">Hide Replies</label>
+        <label class="switch">
+            <input type="checkbox" id="toggleReplies" name="toggleReplies">
+            <span class="slider round"></span>
+        </label>
+    </div>
+    <div>
+        <label for="toggleFollow">Hide Followers and Following</label>
+        <label class="switch">
+            <input type="checkbox" id="toggleFollow" name="toggleFollow">
+            <span class="slider round"></span>
+        </label>
+    </div>
 </div>
 <script src="popup.js"></script>
 </body>

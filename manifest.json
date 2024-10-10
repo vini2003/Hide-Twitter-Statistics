@@ -1,14 +1,14 @@
 {
   "manifest_version": 3,
-  "name": "Hide YouTube Statistics",
+  "name": "Hide Twitter Statistics",
   "version": "2.5",
-  "description": "Make YouTube more pleasant to use by removing views, likes, comments and more.",
+  "description": "Make Twitter more pleasant to use by removing views, likes, comments and more.",
   "permissions": [
     "storage"
   ],
   "content_scripts": [
     {
-      "matches": [ "*://*.youtube.com/*" ],
+      "matches": [ "*://*.x.com/*" ],
       "js": [ "contentScript.js" ],
       "css": [ "content.css" ]
     }

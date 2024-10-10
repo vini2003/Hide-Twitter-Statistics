@@ -1,15 +1,13 @@
-const toggleComments = document.getElementById('toggleComments');
-
-if (toggleComments) {
-    toggleComments.addEventListener('change', function () {
+const toggleReplies = document.getElementById('toggleReplies');
+if (toggleReplies) {
+    toggleReplies.addEventListener('change', function () {
         let isChecked = this.checked;
-
-        chrome.storage.sync.set({hideComments: isChecked});
+        chrome.storage.sync.set({hideReplies: isChecked});
 
         chrome.tabs.query(
             {active: true, currentWindow: true},
             function (tabs) {
-                chrome.tabs.sendMessage(tabs[0].id, {hideComments: isChecked});
+                chrome.tabs.sendMessage(tabs[0].id, {hideReplies: isChecked});
             }
         );
     });
@@ -17,9 +15,33 @@ if (toggleComments) {
 
 document.addEventListener('DOMContentLoaded', function () {
     chrome.storage.sync.get(
-        'hideComments',
+        'hideReplies',
         function (data) {
-            toggleComments.checked = !!data.hideComments;
+            toggleReplies.checked = !!data.hideReplies;
+        }
+    );
+});
+
+const toggleFollow = document.getElementById('toggleFollow');
+if (toggleFollow) {
+    toggleFollow.addEventListener('change', function () {
+        let isChecked = this.checked;
+        chrome.storage.sync.set({hideFollow: isChecked});
+
+        chrome.tabs.query(
+            {active: true, currentWindow: true},
+            function (tabs) {
+                chrome.tabs.sendMessage(tabs[0].id, {hideFollow: isChecked});
+            }
+        );
+    });
+}
+
+document.addEventListener('DOMContentLoaded', function () {
+    chrome.storage.sync.get(
+        'hideFollow',
+        function (data) {
+            toggleFollow.checked = !!data.hideFollow;
         }
     );
 });

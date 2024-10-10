@@ -24,8 +24,17 @@ hr {
 .container {
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: start;
+    flex-direction: column;
+    gap: 5px;
+    width: 100%;
     margin-bottom: 10px; /* Added some margin-bottom for spacing */
+}
+.container > div {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
 }
 .switch {
     position: relative;
@@ -61,10 +70,10 @@ hr {
     border-radius: 50%; /* Ensuring a circular shape */
 }
 input:checked + .slider {
-    background-color: #FF4E45;
+    background-color: #1d9bf0;
 }
 input:focus + .slider {
-    box-shadow: 0 0 1px #FF4E45;
+    box-shadow: 0 0 1px #1d9bf0;
 }
 input:checked + .slider:before {
     transform: translateX(16px); /* Adjusted positioning for the checked state */
