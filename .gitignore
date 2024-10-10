@@ -1,14 +1,1 @@
-# gradle
-
-.gradle/
-build/
-out/
-
-# idea
-
-.idea/
-*.iml
-*.ipr
-*.iws
-
 releases/
