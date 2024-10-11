@@ -6,7 +6,7 @@ function setCommentVisibility(hideComments) {
     const isOnCommentsPage = window.location.pathname.includes('/status/')
     if(isOnCommentsPage) {
         const commentsText = document.querySelectorAll('[data-testid="tweetText"]');
-        const tweetDiv = getParentMatchingSelector(commentsText[0], '[data-testid="cellInnerDiv"]', 9);
+        const tweetDiv = getParentMatchingSelector(commentsText[0], '[data-testid="cellInnerDiv"]', 9).parentElement.childNodes[0];
     
         tweetDiv.parentElement.childNodes.forEach(comment => {
             if(comment !== tweetDiv) { // Ignore the main tweet div, this is the only way of filtering the replies.
@@ -50,13 +50,21 @@ const observer = new MutationObserver(mutations => {
 
         /**
          *  Calls function with every mutation using the
-         *  toogle following visibility value.
+         *  toggle following visibility value.
          */
         chrome.storage.sync.get('hideFollow', function(data) {
             if (data.hideFollow !== undefined) {
                 document.querySelector('[href$="/following"]').parentElement.parentElement.style.display = data.hideFollow ? 'none' : 'flex';
             }
         });
+
+        /* This is used to hide the views of the tweet */
+        const viewsCounter = document.querySelector('span[data-testid="app-text-transition-container"]').parentElement.parentElement.parentElement;
+        if(viewsCounter.tagName === 'DIV') {
+            viewsCounter.style.display = 'none';
+            const parent = viewsCounter.parentElement.childNodes;
+            parent[parent.length - 2].style.display = 'none';
+        }
 
         /**
          *  Hide the analytics from trend cards.

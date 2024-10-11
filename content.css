@@ -26,12 +26,3 @@
 [role="group"] > div:has(> [data-testid="bookmark"]) > :last-child > :last-child > :last-child {
     display: none;
 }
-
-/* This is used to hide the views of the tweet */
-article[data-testid="tweet"] > div > div > :last-child > :nth-last-child(2) > div > :first-child > div > :last-child:not([data-testid]) {
-    display: none;
-}
-
-article[data-testid="tweet"] > div > div > :last-child > :nth-last-child(2) > div > :first-child > div > :nth-last-child(2):not([data-testid]) {
-    display: none;
-}
