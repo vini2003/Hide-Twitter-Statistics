@@ -1,14 +1,14 @@
 {
   "manifest_version": 3,
   "name": "Hide Twitter Statistics",
-  "version": "2.6",
+  "version": "2.7",
   "description": "Make Twitter more pleasant to use by removing views, likes, comments and more.",
   "permissions": [
     "storage"
   ],
   "content_scripts": [
     {
-      "matches": [ "*://*.x.com/*" ],
+      "matches": [ "*://*.x.com/*", "*://*.twitter.com/*" ],
       "js": [ "contentScript.js" ],
       "css": [ "content.css" ]
     }
