@@ -26,3 +26,16 @@
 [role="group"] > div:has(> [data-testid="bookmark"]) > :last-child > :last-child > :last-child {
     display: none;
 }
+
+nav div[role="tablist"] > div:first-child {
+    flex-grow: 0;
+    flex-shrink: 1;
+}
+
+nav div[role="tablist"] > div:first-child > a {
+    display: none;
+}
+
+nav div[role="tablist"] > div:first-child {
+    flex-shrink: 0;
+}

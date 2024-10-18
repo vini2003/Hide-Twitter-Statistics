@@ -1,4 +1,4 @@
-$version = "2.7"
+$version = "2.8"
 $sourceFolder = "."
 $releaseFolder = "releases"
 $zipFile = "$releaseFolder/hide-twitter-statistics-$version.zip"
