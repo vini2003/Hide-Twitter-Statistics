@@ -66,6 +66,16 @@ const observer = new MutationObserver(mutations => {
             parent[parent.length - 2].style.display = 'none';
         }
 
+        const isOnImagePage = window.location.pathname.includes('/photo/')
+        if(isOnImagePage) {
+            const viewsCounterImage = document.querySelectorAll('span[data-testid="app-text-transition-container"]')[4].parentElement.parentElement.parentElement
+            if(viewsCounterImage.tagName === 'DIV') {
+                viewsCounterImage.style.display = 'none';
+                const parent = viewsCounterImage.parentElement.childNodes;
+                parent[parent.length - 2].style.display = 'none';
+            }
+        }
+
         /**
          *  Hide the analytics from trend cards.
          */
